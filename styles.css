@@ -1,0 +1,673 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 修改主题色为红色系 */
+:root {
+    --primary-color: #8B0000;    /* 深红色 */
+    --secondary-color: #DC143C;  /* 猩红色 */
+    --hover-color: #FF4444;      /* 亮红色 */
+    --bg-light: #FFFFFF;         /* 改为纯白色 */
+    --text-dark: #4A0404;        /* 深红文字 */
+}
+
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #FFFFFF;    /* 改为白色 */
+}
+
+.nav-menu {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.nav-menu a:active {
+    transform: translateY(0);
+}
+
+.nav-menu a.active {
+    background-color: var(--secondary-color);
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #FFFFFF;    /* 改为白色 */
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+section {
+    padding: 3rem 2rem;
+    background-color: #FFFFFF;    /* 确保所有区块都是白色背景 */
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.plays-container, .artists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.play-item, .artist-item {
+    display: flex;
+    padding: 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+}
+
+.play-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+
+.play-image {
+    flex: 0 0 120px;
+    margin-right: 1.5rem;
+}
+
+.play-image img {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.play-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.play-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.play-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 表单容器样式 */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* 轮播图样式 */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    background: rgba(139, 0, 0, 0.7);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background: rgba(139, 0, 0, 0.8);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--secondary-color);
+}
+
+.dot-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: white;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+} 
+
+/* 艺术家页面样式 */
+.artists-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.artist-card {
+    display: flex;
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid var(--primary-color);
+}
+
+.artist-image {
+    flex: 0 0 300px;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.artist-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.artist-info h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.artist-title {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.artist-desc {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.artist-achievements {
+    background-color: rgba(139, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.artist-achievements h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.artist-achievements ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.artist-achievements li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.artist-achievements li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .artist-card {
+        flex-direction: column;
+    }
+
+    .artist-image {
+        flex: none;
+        height: 300px;
+    }
+
+    .artist-image img {
+        height: 100%;
+    }
+} 
+
+/* 文化遗产部分样式 */
+.heritage-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.heritage-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+}
+
+.heritage-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.heritage-item p {
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* 修改时间线样式 */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin: 3rem 0;
+    position: relative;
+    width: 45%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: auto;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd)::before {
+    left: -60px;
+}
+
+.timeline-item:nth-child(even)::before {
+    right: -60px;
+} 
+
+/* 视频页面样式 */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+    border: 1px solid var(--primary-color);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+.video-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.video-info p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.featured-video {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+    border: 1px solid var(--primary-color);
+}
+
+.video-description {
+    padding: 1.5rem;
+}
+
+.video-description h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.video-description p {
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+.history-image {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-style: italic;
+} 
+
+/* 表单验证和可访问性样式 */
+.required {
+    color: var(--secondary-color);
+    margin-left: 4px;
+}
+
+.error-message {
+    display: none;
+    color: var(--secondary-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-hint {
+    display: block;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: var(--secondary-color);
+}
+
+.form-group input:invalid + .error-message,
+.form-group textarea:invalid + .error-message {
+    display: block;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: white;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+/* 焦点状态的可访问性增强 */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+} 
+
+/* 标题样式恢复为原始版本 */
+.page-title {
+    position: relative;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.page-title h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.page-title .subtitle {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.section-title .subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-title .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+} 

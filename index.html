@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huangmei Opera Art</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="#famous-plays">Classic Plays</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="message.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="images/1.jpg" alt="Huangmei Opera Scene 1">
+            <div class="slide-text">Classic Scene from Tianxian Pei</div>
+        </div>
+
+        <div class="slides fade">
+            <img src="images/2.jpg" alt="Huangmei Opera Scene 2">
+            <div class="slide-text">Highlights from Lady Fuma</div>
+        </div>
+
+        <div class="slides fade">
+            <img src="images/8.jpg" alt="Huangmei Opera Scene 3">
+            <div class="slide-text">Cowherd and Weaver Girl Performance</div>
+        </div>
+
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <div class="page-title">
+                <h1>Huangmei Opera</h1>
+                <p class="subtitle">A Treasure of Chinese Traditional Opera Art</p>
+            </div>
+        </section>
+
+        <section id="intro">
+            <div class="section-title">
+                <h2>Introduction</h2>
+                <p class="subtitle">Discover the Charm of Traditional Art</p>
+            </div>
+            <p>Huangmei Opera is one of the major local opera forms in Anhui Province, originating from Huangmei County. Known for its accessible melodies and delicate performances, it is acclaimed as "one of China's most charming opera forms".</p>
+        </section>
+
+        <section id="famous-plays">
+            <div class="section-title">
+                <h2>Classic Plays</h2>
+                <p class="subtitle">Timeless Stories of Love and Life</p>
+            </div>
+            <div class="plays-container">
+                <div class="play-item">
+                    <div class="play-image">
+                        <img src="images/3.jpg" alt="Tianxian Pei Photo">
+                    </div>
+                    <div class="play-info">
+                        <h3>Tianxian Pei</h3>
+                        <p>A touching love story between Dong Yong and the Seventh Fairy</p>
+                    </div>
+                </div>
+                <div class="play-item">
+                    <div class="play-image">
+                        <img src="images/4.jpg" alt="Lady Fuma Photo">
+                    </div>
+                    <div class="play-info">
+                        <h3>Lady Fuma</h3>
+                        <p>The legendary story of Feng Suzhen disguised as a man</p>
+                    </div>
+                </div>
+                <div class="play-item">
+                    <div class="play-image">
+                        <img src="images/5.jpg" alt="Cowherd and Weaver Girl Photo">
+                    </div>
+                    <div class="play-info">
+                        <h3>Cowherd and Weaver Girl</h3>
+                        <p>A classic love story between heaven and earth</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Huangmei Opera Arts Exhibition</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
